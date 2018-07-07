@@ -8,4 +8,4 @@
     <img src="https://img.shields.io/pypi/v/mutexp.svg?maxAge=1000" alt="PyPI" />
 </a>
 
-# mutexp: Predict mutant allele expression from DNA features
+# mutexp: Predict mutant allele expression from TCGA and DNA features
