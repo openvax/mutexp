@@ -1,8 +1,13 @@
 # Releasing
 
-This document explains what do once your [Pull Request](https://www.atlassian.com/git/tutorials/making-a-pull-request/) has been reviewed and all final changes applied. Now you're ready merge your branch into master and release it to the world:
+After the version bump PR passes CI and merges, release from a clean `master`
+checkout with Python 3.11 or newer:
 
-1. Make sure that you have `pandoc` and `pypandoc` installed on Travis: this is needed for readme markdown on PyPI. (See [here](http://pandoc.org/installing.html) and [here](https://pypi.python.org/pypi/pypandoc), respectively, for instructions.)
-2. Bump the [version](http://semver.org/) in `__init__.py`, as part of the PR you want to release.
-3. Merge your branch into master.
-4. Travis shoukd be configured to auto-deploy to PyPI, as long as the tests succeed and the library version is newer than any released.
+1. Verify the version in `mutexp/__init__.py` is absent from PyPI.
+2. Install `build` and `twine`, then run `python -m build` and
+   `python -m twine check --strict dist/*`.
+3. Upload with `python -m twine upload dist/*`.
+4. Tag the merge commit as `v<version>` and push the tag.
+
+Check the version-specific PyPI page and its `Requires-Python` metadata before
+closing the release task.

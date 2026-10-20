@@ -36,15 +36,6 @@ except IOError as e:
     print("Failed to open %s" % readme_path)
     readme_markdown = ""
 
-try:
-    import pypandoc
-    readme_restructured = pypandoc.convert(readme_markdown, to='rst', format='md')
-except ImportError as e:
-    readme_restructured = readme_markdown
-    print(e)
-    print("Failed to convert %s to reStructuredText" % readme_filename)
-    pass
-
 def parse_field(name):
 
     with open('%s/__init__.py' % project_name_no_dashes, 'r') as f:
@@ -77,11 +68,17 @@ if __name__ == '__main__':
             'Intended Audience :: Science/Research',
             'License :: OSI Approved :: Apache Software License',
             'Programming Language :: Python',
+            'Programming Language :: Python :: 3.11',
+            'Programming Language :: Python :: 3.12',
+            'Programming Language :: Python :: 3.13',
+            'Programming Language :: Python :: 3.14',
             'Topic :: Scientific/Engineering :: Bio-Informatics',
         ],
+        python_requires=">=3.11",
         install_requires=[
             "six>=1.9.0",
         ],
-        long_description=readme_restructured,
+        long_description=readme_markdown,
+        long_description_content_type='text/markdown',
         packages=find_packages(),
     )

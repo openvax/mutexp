@@ -1,11 +1,6 @@
-<a href="https://travis-ci.org/openvax/mutexp">
-    <img src="https://travis-ci.org/openvax/mutexp.svg?branch=master" alt="Build Status" />
-</a>
-<a href="https://coveralls.io/github/openvax/mutexp?branch=master">
-    <img src="https://coveralls.io/repos/openvax/mutexp/badge.svg?branch=master&service=github" alt="Coverage Status" />
-</a>
-<a href="https://pypi.python.org/pypi/mutexp/">
-    <img src="https://img.shields.io/pypi/v/mutexp.svg?maxAge=1000" alt="PyPI" />
-</a>
+[![Tests](https://github.com/openvax/mutexp/actions/workflows/tests.yml/badge.svg)](https://github.com/openvax/mutexp/actions/workflows/tests.yml)
+[![PyPI](https://img.shields.io/pypi/v/mutexp.svg)](https://pypi.org/project/mutexp/)
 
 # mutexp: Predict mutant allele expression from TCGA and DNA features
+
+Requires Python 3.11 or newer.
